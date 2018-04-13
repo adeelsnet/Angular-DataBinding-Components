@@ -7,7 +7,7 @@ import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 })
 export class GameControlComponent implements OnInit {
   @Output() allNumbersFired = new EventEmitter<number>();
-  @Output() resetAll = new EventEmitter<{}>();
+  @Output() resetAll = new EventEmitter<void>();
   onOff;
   intervals;
   intervalValue = 0;

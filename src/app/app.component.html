@@ -43,24 +43,34 @@
 <div class="container">
   <div class="row">
     <div class="col-md-12">
-      <app-game-control (allNumbersFired)="numbersFired($event)" (resetAll)="resetValues($event)"></app-game-control>
+      <app-game-control (allNumbersFired)="numbersFired($event)" (resetAll)="resetValues($event)">
+      </app-game-control>
     </div>
   </div>
+  <h4 [hidden]= "invisible"> Total Numbers fired: {{ totalNumbersFired }}</h4>
 </div>
 <hr>
-<div class="container">
+<div class="container" [hidden]= "invisible">
   <div class="row">
     <div class="col-md-6 col-sm-6 col-xs-6 text-center">
-      <app-odd *ngFor="let oddNumber of oddNumbersArray" [oddNumber]="oddNumber">
-        <p>{{oddNumber}}</p>
-        <hr>
-      </app-odd>
+      <div class="panel panel-info">
+        <div class="panel-heading">
+          <h3 class="panel-title">Odd Numbers</h3>
+        </div>
+        <div class="panel-body">
+          <app-odd *ngFor="let oddNumber of oddNumbersArray" [oddNumber]="oddNumber"></app-odd>
+        </div>
+      </div>
     </div>
     <div class="col-md-6 col-sm-6 col-xs-6 text-center">
-      <app-even *ngFor="let evenNumber of evenNumbersArray" [evenNumber]="evenNumber">
-        <p>{{evenNumber}}</p>
-        <hr>
-      </app-even>
+      <div class="panel panel-success">
+        <div class="panel-heading">
+          <h3 class="panel-title">Even Numbers</h3>
+        </div>
+        <div class="panel-body">
+          <app-even *ngFor="let evenNumber of evenNumbersArray" [evenNumber]="evenNumber"></app-even>
+        </div>
+      </div>
     </div>
   </div>
 </div>
