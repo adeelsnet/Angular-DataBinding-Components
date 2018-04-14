@@ -47,10 +47,10 @@
       </app-game-control>
     </div>
   </div>
-  <h4 [hidden]= "invisible"> Total Numbers fired: {{ totalNumbersFired }}</h4>
+  <h4 [hidden]="invisible"> Total Numbers fired: {{ totalNumbersFired }}</h4>
 </div>
 <hr>
-<div class="container" [hidden]= "invisible">
+<div class="container" [hidden]="invisible">
   <div class="row">
     <div class="col-md-6 col-sm-6 col-xs-6 text-center">
       <div class="panel panel-info">
@@ -58,7 +58,7 @@
           <h3 class="panel-title">Odd Numbers</h3>
         </div>
         <div class="panel-body">
-          <app-odd *ngFor="let oddNumber of oddNumbersArray" [oddNumber]="oddNumber"></app-odd>
+          <app-odd *ngFor="let oddNumber of oddNumbersArray" [oddNumber]="oddNumber" [oddSerial]="oddSerialAppCom"></app-odd>
         </div>
       </div>
     </div>
@@ -68,7 +68,7 @@
           <h3 class="panel-title">Even Numbers</h3>
         </div>
         <div class="panel-body">
-          <app-even *ngFor="let evenNumber of evenNumbersArray" [evenNumber]="evenNumber"></app-even>
+          <app-even *ngFor="let evenNumber of evenNumbersArray" [evenNumber]="evenNumber" [evenSerial]="evenSerialAppCom"></app-even>
         </div>
       </div>
     </div>

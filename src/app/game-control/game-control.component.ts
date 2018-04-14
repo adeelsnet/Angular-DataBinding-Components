@@ -13,7 +13,7 @@ export class GameControlComponent implements OnInit {
   intervalValue = 0;
   lock = true;
 
-  constructor() {}
+  constructor() { }
 
   ngOnInit() {
   }
@@ -21,10 +21,11 @@ export class GameControlComponent implements OnInit {
   onGameStart() {
     this.lock = false;
     this.intervals = setInterval(() => {
-       this.allNumbersFired.emit(this.intervalValue + 1);
-          this.intervalValue++;
-      }, 1000);
-    }
+      this.allNumbersFired.emit(this.intervalValue = Math.round(Math.random() * 100));
+      /* this.allNumbersFired.emit(this.intervalValue + 1);
+         this.intervalValue++; */
+    }, 1000);
+  }
 
   onGamePause() {
     this.lock = true;

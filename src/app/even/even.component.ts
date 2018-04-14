@@ -6,11 +6,14 @@ import { Component, OnInit, Input, ContentChild, ElementRef } from '@angular/cor
   styleUrls: ['./even.component.css']
 })
 export class EvenComponent implements OnInit {
-  @Input () evenNumber: number;
+  @Input() evenNumber: number;
+  @Input() evenSerial: number;
+  sNo: number = 0;
+
   constructor() { }
 
   ngOnInit() {
-
+    this.sNo = this.evenSerial;
   }
 
 }
